@@ -2672,6 +2672,7 @@ resource "aws_iam_role_policy_attachment" "karpenter" {
     AmazonEKSWorkerNodePolicy          = "${local.iam_role_policy_prefix}/AmazonEKSWorkerNodePolicy",
     AmazonEC2ContainerRegistryReadOnly = "${local.iam_role_policy_prefix}/AmazonEC2ContainerRegistryReadOnly",
     AmazonEKS_CNI_Policy               = "${local.iam_role_policy_prefix}/AmazonEKS_CNI_Policy"
+    AmazonSSMManagedInstanceCore       = "${local.iam_role_policy_prefix}/AmazonSSMManagedInstanceCore"
   } : k => v if local.create_karpenter_node_iam_role }
 
   policy_arn = each.value
